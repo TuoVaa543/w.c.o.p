@@ -1,0 +1,118 @@
+ html{
+	padding: 0;
+	margin: 0;
+}
+
+#compass{
+	margin: 100px auto;
+	width: 500px;
+	height: 500px;
+	border: 18px double #000;
+	position: relative;
+	background-color: #ccc;
+	background-image: url(compass_bg.jpg);
+	background-size: 100% 100%;
+	border-radius: 50%;
+	box-shadow: 0px 0px 20px #000 inset;
+//	animation-name: backgroundScroll;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes backgroundScroll{
+	from{
+		background-position: 0px 0px;
+	}
+	to{
+		background-position: -500px 0px;
+	}
+}
+
+#needle{
+	position: absolute;
+	transform-origin: center center;
+	width: 10px;
+	height: 420px;
+	background-color: #fff;
+	top: 40px;
+	left: 246px;
+	z-index: 2;
+	box-shadow: 0px 0px 4px #000 inset;
+	background: rgb(255,0,0);
+	background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 49%, rgba(121,9,9,1) 50%, rgba(16,145,205,1) 51%, rgba(0,212,255,1) 100%);
+	animation-name: seekNorth;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+	animation-easing-function: ease-in-out;
+}
+
+#pin{
+	position: absolute;
+	border: 8px groove #666;
+	top: 226px;
+	left: 226px;
+	z-index: 5;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: red;
+	box-shadow: 0px 0px 10px #000;
+	z-index: 3;
+	
+}
+
+@keyframes seekNorth{
+	0%{
+		transform: rotate(0deg);
+	}
+	25%{
+		transform: rotate(-182deg);
+	}
+	50%{
+		transform: rotate(42deg);
+	}
+	75%{
+		transform: rotate(-80deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.helper{
+	float: left;
+	width: 250px;
+	height: 250px;
+	//outline: 1px solid orange;
+}
+
+#north, #east, #south, #west{
+	position: absolute;
+	color: #fff;
+	text-shadow: 1px 1px 3px #000;
+	font-size: 42px;
+	z-index: 1;
+}
+
+#north{
+	top: 10px;
+	left: 236px;
+	color: blue;
+}	
+
+#south{
+	bottom: 10px;
+	left: 236px;
+	color: red;
+}
+
+#east{
+	right: 10px;
+	top: 220px;
+}
+
+#west{
+	left: 10px;
+	top: 220px;
+}

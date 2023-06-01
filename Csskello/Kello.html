@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="Stylesheet" href="CSS/Styles.CSS">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+	 
+	<div class="clock">
+		 <div class="outer-clock-face">
+          <div class="marking marking-one"></div>
+          <div class="marking marking-two"></div>
+          <div class="marking marking-three"></div>
+          <div class="marking marking-four"></div>
+          <div class="inner-clock-face">
+		  <div class="hand hour-Hand"></div>
+		  <div class="hand min-Hand"></div>
+		  <div class="hand second-hand"></div>
+		  <div class="weekNumber" id="weekNumber" ></div>
+		  <div class="dayNames" id="dayNames" ></div>
+		  </div>
+		</div>
+	</div>
+	
+<script>
+const secondHand = document.querySelector('.second-hand');
+const minsHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
+
+function setDate() {
+  const now = new Date();
+
+  const seconds = now.getSeconds();
+  const secondsDegrees = ((seconds / 60) * 360) + 90;
+  secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+  const mins = now.getMinutes();
+  const minsDegrees = ((mins / 60) * 360) + ((seconds/60)*6) + 90;
+  minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+  const hour = now.getHours();
+  const hourDegrees = ((hour / 12) * 360) + ((mins/60)*30) + 90;
+  hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+}
+setInterval(setDate, 1000);
+
+setDate();
+Date.prototype.getWeek = function() {
+    var onejan = new Date(this.getFullYear(),0,1);
+    return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()-1)/7.5);
+} 
+ var weekNumber=(new Date()).getWeek();
+ var dayNames = ["Su","Ma","Ti","Ke","To","Pe","La"];
+	var now = new Date();
+	
+	
+	var day2 = document.getElementById("dayNames").innerHTML =(dayNames[now.getDay()]);
+	var weekNumber2= document.getElementById("weekNumber").innerHTML = weekNumber;
+	
+	
+</script>
+</body>
+</html>

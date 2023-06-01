@@ -1,0 +1,27 @@
+*,html{
+
+}
+body{
+
+}
+table, tr, td{
+	outline: 1px solid #000;
+}
+
+tr, td{
+	text-align: center;
+	width: 40px;
+	height: 30px;
+}
+
+td{
+	cursor: pointer;
+}
+
+.off{
+	background-color: transparent;
+}
+
+.on{
+	background-color: #DAA520;
+}
