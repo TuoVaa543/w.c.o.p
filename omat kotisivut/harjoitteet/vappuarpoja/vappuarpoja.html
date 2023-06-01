@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*, html{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #FFFFFF;
+	
+}
+
+#bg{
+	position: relative;
+	margin-top: -50px;
+	width: 1400px;
+	height: 700px;
+	background-image: url(pd.jpg);
+	background-size: 100% 100%;
+}
+#machine{
+position:relative;
+width: 504px;
+height: 504px;
+
+border: 4px solid white;
+}
+
+#game{
+	position: relative;
+	top: 140px;
+	width: 750px;
+	height: 700px;
+	
+	margin: 50px auto;
+	overflow: hidden;
+	right: 120px;
+	top:120px;
+}
+/*
+#reel1, #reel2,  #reel3, #reel4, #reel5,#reel6,#reel7,#reel8,#reel9#reel10,#reel11,#reel12{
+	position: relative;
+	width: 150px;
+	height: 300px;
+	outline: 1px solid #000;
+	float: left;
+	z-index: 10000;
+}
+
+#topbar{
+	width: 100%;
+	height: 150px;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:  9999;
+}
+
+#botbar{
+	width: 100%;
+	height: 150px;
+	
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+}
+*/
+/*
+#reel1{
+	animation-delay: 0.1s;
+//	animation-duration: 0.1s;
+}
+#reel2{
+	animation-delay: 0.2s;
+//	animation-duration: 0.125s;
+}
+#reel3{
+	animation-delay: 0.3s;
+//	animation-duration: 0.15s;
+}
+#reel4{
+	animation-delay: 0.4s;
+//	animation-duration: 0.175s;
+}
+#reel5{
+	animation-delay: 0.5s;
+//	animation-duration: 0.2s;
+}
+#reel6{
+	animation-delay: 0.6s;
+//	animation-duration: 0.225s;
+}
+#reel7{
+	animation-delay: 0.7s;
+//	animation-duration: 0.25s;
+}
+#reel8{
+	animation-delay: 0.8s;
+//	animation-duration: 0.275s;
+}
+#reel9{
+	animation-delay: 0.9s;
+//	animation-duration: 0.3s;
+}
+#reel10{
+	animation-delay: 1.0s;
+//	animation-duration: 0.325s;
+}
+#reel11{
+	animation-delay: 1.1s;
+//	animation-duration: 0.35s;
+}
+#reel12{
+	animation-delay: 1.2s;
+//	animation-duration: 0.2375s;
+}
+img{
+	float: left;
+	clear: both;
+	outline: 2px solid #5b462b;
+	width: 150px;
+	height: 150px;
+	background-color: #FFFFFF;
+}
+
+.still{
+	animation: none !important;
+}
+
+.spinning{
+//	animation: spinner 0.015s ease-in-out infinite;
+	animation: spinner 0.015s ease-in-out infinite;
+}
+*/
+/*
+@keyframes spinner{
+	0%{
+		top: -450px;
+	}
+	100%{
+		top: 0px;
+	}
+}
+*/
+img{
+margin:10px;
+width:150px;
+height:200px;
+background-size: 100% 100%;
+overflow: auto;
+}
+
+.item{
+float: left;
+position: relative;
+width: 150px;
+height: 200px;
+margin: 10px;
+}
+
+.item img{
+position: absolute;
+top: 0;
+left: 0;
+width: 150px;
+height: 200px;
+}
+
+.item input{
+position: absolute;
+bottom: 6px;
+left: 22px;
+z-index: 10;
+width: 32px;
+height: 32px;
+}
+</style>
+<script>
+function spin() {
+var kuvanum = [1,2,3,4,5,6,7,8,9,10,11,12];
+var jarjestys = kuvanum.sort(arpoja);
+var list = Array.from(jarjestys);
+function arpoja(a, b){
+return 0.5 - Math.random();
+}
+var maara = 0 ;
+for (let rivi = 0; rivi < 3; rivi++) {
+for (let sarake = 0; sarake < 4; sarake++) {
+document.getElementById("HERE").innerHTML += ' <div class="item"> <input type="checkbox" /> <img src="' + (list[maara]) + '.png"> </div>';
+maara++;
+}
+document.getElementById("HERE").innerHTML += '</br>';
+}
+}
+function items(count){
+	var items = [];
+	    items.push(1,2,3,4,5,6,7,8,9,10,11,12);
+
+	var reel1 = document.getElementById("reel1");
+	var reel2 = document.getElementById("reel2");
+	var reel3 = document.getElementById("reel3");
+	var reel4 = document.getElementById("reel4");
+	var reel5 = document.getElementById("reel5");
+	var reel6 = document.getElementById("reel6");
+	var reel7 = document.getElementById("reel7");
+	var reel8 = document.getElementById("reel8");
+	var reel9 = document.getElementById("reel9");
+	var reel10 = document.getElementById("ree20");
+	var reel11 = document.getElementById("ree21");
+	var reel12 = document.getElementById("ree22");
+
+	var a = 0;
+	var buffer1 = "";
+
+	var b = 0;
+	var buffer2 = "";
+
+	var c = 0;
+	var buffer3 = "";
+
+	var d = 0;
+	var buffer4 = "";
+	
+	var e = 0;
+	var buffer5 = "";
+	
+	var f = 0;
+	var buffer6 = "";
+	
+	var g = 0;
+	var buffer7 = "";
+	
+	var k = 0;
+	var buffer8 = "";
+	
+	var i = 0;
+	var buffer9 = "";
+	
+	var j = 0;
+	var buffer10 = "";
+	
+	var k = 0;
+	var buffer11 = "";
+	
+	var l = 0;
+	var buffer12 = "";
+	
+
+	while (a<=count){
+		var randomi1 = Math.floor(Math.random()*items.length);
+		buffer1 += "<img src='" + items[randomi1] + ".png' />";
+		a++;
+	}
+	while (b<=count){
+		var randomi2 = Math.floor(Math.random()*items.length);
+		buffer2 += "<img src='" + items[randomi2] + ".png' />";
+		b++;
+	}
+	while (c<=count){
+		var randomi3 = Math.floor(Math.random()*items.length);
+		buffer3 += "<img src='" + items[randomi3] + ".png' />";
+		c++;
+	}
+	while (d<=count){
+		var randomi4 = Math.floor(Math.random()*items.length);
+		buffer4 += "<img src='" + items[randomi4] + ".png' />";
+		d++;
+	}
+	
+	while (e<=count){
+		var randomi5 = Math.floor(Math.random()*items.length);
+		buffer5 += "<img src='" + items[randomi5] + ".png' />";
+		e++;
+	}
+	while (f<=count){
+		var randomi6 = Math.floor(Math.random()*items.length);
+		buffer6 += "<img src='" + items[randomi6] + ".png' />";
+		f++;
+	}
+	while (g<=count){
+		var randomi7 = Math.floor(Math.random()*items.length);
+		buffer7 += "<img src='" + items[randomi7] + ".png' />";
+		g++;
+	}
+	while (k<=count){
+		var randomi8 = Math.floor(Math.random()*items.length);
+		buffer8 += "<img src='" + items[randomi8] + ".png' />";
+		k++;
+	}
+	while (i<=count){
+		var randomi9 = Math.floor(Math.random()*items.length);
+		buffer9 += "<img src='" + items[randomi9] + ".png' />";
+		i++;
+	}
+	while (j<=count){
+		var randomi10 = Math.floor(Math.random()*items.length);
+		buffer10 += "<img src='" + items[randomi10] + ".png' />";
+		j++;
+	}
+	while (k<=count){
+		var randomi11 = Math.floor(Math.random()*items.length);
+		buffer11 += "<img src='" + items[randomi11] + ".png' />";
+		k++;
+	}
+	while (l<=count){
+		var randomi12 = Math.floor(Math.random()*items.length);
+		buffer12 += "<img src='" + items[randomi12] + ".png' />";
+		l++;
+	}
+	
+	reel1.innerHTML = buffer1;
+	reel2.innerHTML = buffer2;
+	reel3.innerHTML = buffer3;
+	reel4.innerHTML = buffer4;
+	reel5.innerHTML = buffer5;
+	reel6.innerHTML = buffer6;
+	reel7.innerHTML = buffer7;
+	reel8.innerHTML = buffer8;
+	reel9.innerHTML = buffer9;
+	//<reel10.innerHTML = buffer10;
+	//reel11.innerHTML = buffer11;
+	//reel12.innerHTML = buffer12;
+	
+}
+/*
+function spin(){
+	var reel1 = document.getElementById("reel1");
+	var reel2 = document.getElementById("reel2");
+	var reel3 = document.getElementById("reel3");
+	var reel4 = document.getElementById("reel4");
+	var reel5 = document.getElementById("reel5");
+	var reel6 = document.getElementById("reel6");
+	var reel7 = document.getElementById("reel7");
+	var reel8 = document.getElementById("reel8");
+	var reel9 = document.getElementById("reel9");
+	var reel10 = document.getElementById("reel10");
+	var reel11 = document.getElementById("reel11");
+	var reel12 = document.getElementById("reel12");
+	
+	reel1.setAttribute("class", "spinning");
+	reel2.setAttribute("class", "spinning");
+	reel3.setAttribute("class", "spinning");
+	reel4.setAttribute("class", "spinning");
+	reel5.setAttribute("class", "spinning");
+	reel6.setAttribute("class", "spinning");
+	reel7.setAttribute("class", "spinning");
+	reel8.setAttribute("class", "spinning");
+	reel9.setAttribute("class", "spinning");
+	reel10.setAttribute("class", "spinning");
+	reel11.setAttribute("class", "spinning");
+	reel12.setAttribute("class", "spinning")
+
+	setTimeout(function(){
+		reel1.setAttribute("class", "still");
+		reel2.setAttribute("class", "still");
+		reel3.setAttribute("class", "still");
+		reel4.setAttribute("class", "still");
+		reel5.setAttribute("class", "still");
+		reel6.setAttribute("class", "still");
+		reel7.setAttribute("class", "still");
+		reel8.setAttribute("class", "still");
+		reel9.setAttribute("class", "still");
+		reel10.setAttribute("class", "still");
+		reel11.setAttribute("class", "still");
+		reel12.setAttribute("class", "still");
+		
+	},1450);
+
+	setTimeout(function(){
+		items(12);
+	},1450);
+	*/
+
+</script>
+</head>
+<body onLoad="spin();">
+
+<div id="bg">
+
+	<div id="game">
+	
+  <p id="HERE"></p>
+		
+		
+	</div>
+
+</div>
+</body>
+</html>

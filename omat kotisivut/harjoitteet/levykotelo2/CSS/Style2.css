@@ -1,0 +1,276 @@
+*,html {
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #fff;
+	perspective: 1500px;
+	overflow: hidden;
+}
+
+.reveal{
+	transform: rotateY(-180deg);
+}
+
+.hidden{
+	transform: rotateY(0deg);
+}
+
+/* front cover */
+#frontCover, #backCover{
+	position: relative;
+	width: 504px;
+	height: 504px;
+	//border: 4px solid red;
+	overflow: visible;
+    transform-style: preserve-3d;
+	transition: all 1s ease-in-out;
+}
+
+#frontCover:hover > #front{
+	transform: rotateY(-180deg);
+}
+
+#frontCover:hover > #inside_a{
+	transform: rotateY(-180deg);
+}
+
+#frontCover{
+	margin: 100px auto;
+}
+
+#backCover{
+	position: relative;
+	top: -504px; /* liikutetaan takakantta levykannen korkeuden verran ylöspäin, jotta saadaan elementit "päällekkäin" */
+	left: 0px;
+}
+
+#front{
+	z-index: 20;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 500px;
+	height: 500px;
+	background-color: orange;
+	background-image: url(../kuvat/kuva2.jpg);
+	background-size: cover;
+	border: 2px solid #333;
+	backface-visibility: hidden; /* piilotetaan kannen takapuolen näyttäminen */
+	transition: all 1s ease-in-out;
+	transform: rotateY(0deg);
+	transform-origin: 0 0; /* sijoitetaan kannen "sarana" vasempaan ylänurkkaan, jotta saadaan "oviaukaisu-efekti" */
+}
+
+#back{
+	z-index: 20;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 500px;
+	height: 500px;
+	background-color: orange;
+	background-image: url(../kuvat/kuva2.jpg);
+	background-size: cover;
+	border: 2px solid #333;
+	backface-visibility: hidden;
+	transition: all 1s ease-in-out;
+	transform: rotateY(-180deg);
+}
+
+#anfangi{
+	font-family: arial;
+	font-weight: bold;
+	font-size: 340px;
+	color: #8B0000;
+	opacity: .35;
+	text-align: center;
+	transform: scale(1.75);
+}
+
+h2{
+	margin-top: 20px;
+	font-weight: bold;
+	text-align: center;
+	//letter-spacing: 4px;
+	font-family: arial;
+	font-size: 30px;
+}
+
+.flip{
+	display: inline-block;
+	transform: scaleX(-1);
+}
+
+/* back cover */
+
+#tracklist{
+	position: absolute;
+	top: 60px;
+	left: 100px;
+}
+
+#back ul{
+	margin-top: 40px;
+}
+
+#back ul li{
+	list-style: decimal;
+	font-weight: bold;
+	font-family: arial;
+	margin: 10px 40px;
+}
+
+#back #imprint{
+	width: 100px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+#back #barcode{
+	width: 140px;
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+}
+
+/* inside */
+
+#inside_b{
+	display: none;
+	width: 500px;
+	height: 500px;
+	//margin: 100px auto;
+	border: 2px solid #333;
+	background-color: #000;
+	background-image: url(../kuvat/front-bg.png);
+	background-size: cover;
+}
+
+#inside_x{
+	width: 500px;
+	height: 500px;
+	//margin: 100px auto;
+	border: 2px solid #333;
+	background-color: #000;
+	position: relative;
+}
+
+#inside_x #disc{
+	width: 495px;
+	height: 495px;
+	border: 3px solid #ccc;
+	border-radius: 50%;
+}
+
+#inside_x #disc #rectangle{
+	width: 90px;
+	height: 300px;
+	position: relative;
+	top: 100px;
+	left: 200px;
+	overflow: hidden;
+	background-image: url(../kuvat/kuva1.jpg.jfif);
+	background-position: 100px -100px;
+}
+
+#inside_x #disc #rectangle #center{
+	width: 58px;
+	height: 58px;
+	border: 16px solid #666;
+	background-color: #000;
+	border-radius: 50%;
+	position: absolute;
+	top: 100px;
+	box-shadow: 0px 0px 40px #000;
+}
+
+#inside_x #disc #nin_logo{
+	width: 60px;
+	height: 25px;
+	border: 2px solid yellow;
+	text-transform: uppercase;
+	color: yellow;
+	font-family: arial;
+	font-size: 28px;
+	line-height: 25px;
+	text-align: center;
+	letter-spacing: 3px;
+	transform: scale(0.8);
+	position: absolute;
+	top: 236px;
+	left: 340px;
+}
+
+#inside_x #disc #nin_logo::before{
+	content: "progamermove ";
+	font-size: 5px;
+	line-height: 12px;
+	top: -20px;
+	position: absolute;
+}
+
+#inside_x #disc #nin_logo::after{
+	content: "trickshot";
+	font-size: 8px;
+	top: -10px;
+	text-transform: lowercase;
+}
+
+#inside_x #disc #semicircle{
+	width: 460px;
+	height: 460px;
+	position: absolute;
+	border-radius: 50%;
+	top: 15px;
+	left: 15px;
+	border: 6px solid yellow;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+
+#inside_a{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	border: 2px solid #333;
+	background-color: #000;
+	transition: all 1s ease-in-out;
+	transform: rotateY(0deg);
+	transform-origin: 0 0;
+}
+
+#inside_a .text{
+	color: #fff;
+	font-size: 12px;
+	text-align: justify;
+	margin: 30px 20px;
+	position: relative;
+	z-index: 2;
+	color: orange;
+	transform: scaleX(-1);
+}
+
+#anfangi2{
+	position: absolute;
+	top: 25px;
+	left: 150px;
+	z-index: 4;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 340px;
+	color: #8B0000;
+	opacity: .85;
+	text-align: center;
+	transform: scale(1.75) scaleX(1);
+	
+	/* Jos haluat tekstille taustakuvan, voit käyttää tekstiä itsessään
+       maskina, seuraavien komentojen avulla: 	*/
+	background-image: url(../kuvat/front-bg.jpg);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

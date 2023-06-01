@@ -1,0 +1,106 @@
+!html{
+
+}
+li{
+	float: left;
+	margin: 15px;
+	list-style: none;
+	width: 64px;
+	height: 64px;
+	text-align: center;
+	line-height: 64px;
+	font-size: 32px;
+	font-family: arial;
+	background-color: orange;
+	border: 3px double #fff;
+	box-shadow: 0px 0px 10px #fff inset;
+	border-radius: 50%;
+}
+
+#content1, #content2, #output{
+	float: left;
+	height: auto;
+	clear: both;
+//	outline: 1px solid #f00;
+	padding: 10px;
+}
+
+#output li{
+	position: relative;
+	animation: drop 0.5s ease-in-out 1;
+	animation-fill-mode: both;
+}
+
+#output li:nth-child(1){
+	animation-delay: 0.25s;
+}
+
+#output li:nth-child(2){
+	animation-delay: 0.5s;
+}
+
+#output li:nth-child(3){
+	animation-delay: 0.75s;
+}
+
+#output li:nth-child(4){
+	animation-delay: 1s;
+}
+
+#output li:nth-child(5){
+	animation-delay: 1.25s;
+}
+
+#output li:nth-child(6){
+	animation-delay: 1.5s;
+}
+
+#output li:nth-child(7){
+	animation-delay: 1.75s;
+}
+
+#output li:nth-child(8){
+	animation-delay: 2s;
+}
+
+#output li:nth-child(9){
+	animation-delay: 2.25s;
+}
+
+#output li:nth-child(10){
+	animation-delay: 2.5s;
+}
+
+#output li:nth-child(8)::before{
+	width: 3px;
+	height: 64px;
+	padding: 0 5px;
+	content: " ";
+	position: absolute;
+	left: -20px;
+	border-left: 3px solid #f00;
+}
+
+
+
+
+
+@keyframes drop{
+	0%{
+		margin-top: -150px;
+		opacity: 0;
+	}
+	90%{
+		margin-top: 12px;
+	}
+	95%{
+		margin-top: 0;
+		opacity: 1;
+	}
+	97%{
+		margin-top: -8px;
+	}
+	100%{
+		margin-top: 0;
+	}
+}
