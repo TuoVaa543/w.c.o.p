@@ -1,0 +1,56 @@
+/* CSS-reset */
+*, html{
+	padding: 0;
+	margin: 0;
+}
+
+html, body{
+	height: 100%;
+}
+
+body{
+	font-family: arial;
+	font-size: 1em;
+background-color:tan;
+}
+
+h1{
+	color: black;
+}
+
+#navigation{
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-color: wheat;
+}
+
+#navigation h2{
+	margin: 10px;
+}
+
+#navigation ul{
+	margin: 10px;
+}
+
+#navigation #copyright{
+	position: absolute;
+	bottom: 0px;
+}
+
+
+#content{
+	width: 80%;
+	height: 100%;
+	float: right;
+	background-color: sandybrown;
+	color:black;
+}
+
+#content h2{
+	margin: 10px;
+}
+
+#content p{
+	margin: 10px;
+}
